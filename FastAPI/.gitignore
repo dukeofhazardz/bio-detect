@@ -1,0 +1,14 @@
+api/__pycache__
+gemini/__pycache__
+prompt/__pycache__
+tests/__pycache__
+tests/test_api/__pycache__
+tests/test_gemini/__pycache__
+tests/test_prompt/__pycache__
+.env
+test.txt
+prompt.txt
+service_account_key.json
+credentials.json
+token.json
+token.pickle
