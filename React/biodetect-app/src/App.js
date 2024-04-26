@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 import api from "./api";
 import loadingGif from "./loading.gif";
+import background from "./background.jpg"
 
 const App = () => {
   const [ image, setImage ] = useState(null);
@@ -59,7 +61,7 @@ const App = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-body-tertiary gradient-custom">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             BioDetect
@@ -85,7 +87,7 @@ const App = () => {
 
           {error && <div className="alert alert-danger">{error}</div>}
 
-          <button type='submit' className="btn btn-primary" disabled={loading}>
+          <button type='submit' className="btn btn-outline-primary rounded-0 py-2 px-4" disabled={loading}>
             {loading ? <img src={loadingGif} alt="Loading..." style={{ width: "30px", height: "auto", borderRadius: "50%" }}/> : "Submit"}
           </button>
 
@@ -103,10 +105,123 @@ const App = () => {
           )}
       </div>
 
-      {result && (
-        <div className="mt-3">
-          <h3>Result:</h3>
-          <pre>{JSON.stringify(result, null, 2)}</pre>
+      { result && (
+        <div id="carouselExample" class="carousel carousel-dark slide pointer-event p-3 m-5 border-0 bd-example m-5 border-0">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 1" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Species</h2>
+                <p>{result.species}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 2" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Common Name</h2>
+                <p>{result.common_name}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 3" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Scientific Name</h2>
+                <p>{result.scientific_name}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 4" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Classification</h2>
+                <p>{result.classification}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 5" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Physical Characteristics</h2>
+                <p>{result.physical_characteristics}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 6" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Behavioral Traits</h2>
+                <p>{result.behavioral_traits}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 7" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Habitat</h2>
+                <p>{result.habitat}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 8" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Geographic Distribution</h2>
+                <p>{result.geographic_distribution}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 9" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Diet and Feeding Habits</h2>
+                <p>{result.diet_and_feeding_habits}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 10" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Reproduction and Lifecycle</h2>
+                <p>{result.reproduction_and_lifecycle}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 11" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Conservation Status</h2>
+                <p>{result.conservation_status}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 12" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Interactions with other Species</h2>
+                <p>{result.interactions_with_other_species}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 13" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Adaptations to the Environment</h2>
+                <p>{result.adaptations_to_the_environment}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 14" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Threats and Challenges</h2>
+                <p>{result.threats_and_challenges}</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={background} className="d-block w-100" width="800" height="400" alt="Slide 15" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Conservation Efforts and Initiatives</h2>
+                <p>{result.conservation_efforts_and_initiatives}</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       )}
     </div>
