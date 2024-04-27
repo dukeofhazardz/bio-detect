@@ -91,7 +91,21 @@ const Detect = () => {
           )}
       </div>
 
-      { result && (
+      <div>
+        {result && result.error && (<div id="carouselExample" class="carousel carousel-dark slide pointer-event p-3 m-5 border-0 bd-example m-5 border-0">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src={background} className="d-block w-100" alt="Slide 1" />
+              <div className="carousel-caption d-flex flex-column h-75 align-items-center justify-items-center">
+                <h2>Error</h2>
+                <p>{result.error}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      { result && !result.error && (
         <div id="carouselExample" class="carousel carousel-dark slide pointer-event p-3 m-5 border-0 bd-example m-5 border-0">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -210,6 +224,7 @@ const Detect = () => {
           </button>
         </div>
       )}
+      </div>
     </div>
   )
 }
