@@ -1,91 +1,65 @@
-# BioDetect API
+## BioDetect APP
 
-The BioDetect API is a tool designed to detect various organisms based on images provided to the API. It utilizes machine learning models to analyze images and provide information about the detected organism.
+Welcome to the BioDetect App, a web app that allows users to detect organisms based on images they provide. This API leverages cutting-edge technology to analyze images and provide detailed information about the detected organisms, including species, common name, scientific name, classification, physical characteristics, behavioral traits, habitat, geographic distribution, diet and feeding habits, reproduction and lifecycle, conservation status, interactions with other species, adaptations to the environment, threats and challenges, and conservation efforts and initiatives.
 
-## Usage
+### Table of Contents
+1. [Introduction](#introduction)
+2. [Usage](#usage)
+    - [Home](#home)
+    - [Detect](#detect)
+    - [About](#about)
+3. [Technologies](#technologies)
+4. [Contributing](#contributing)
+5. [Authors](#authors)
+6. [License](#license)
 
-### Home Endpoint
+<a name="introduction"></a>
+### Introduction
 
-- **Method:** GET
-- **URL:** `/`
-- **Description:** Returns information about the BioDetect API and instructions on how to use it.
-- **Using cURL:**
-``` bash
-curl -X GET https://biodetect-api.onrender.com/
-```
-- **Response:**
-  ```json
-  {
-      "message": "Welcome to the BioDetect API",
-      "info": "You have to send a POST request to /detect with an image of an animal, insect, or plant to elicit a response from the API.",
-      "additional_info": "The API accepts images in common formats such as JPG, PNG, and GIF. Make sure to provide clear and focused images for accurate detection results.",
-      "json_response_format": {
-          "species": "",
-          "common_name": "",
-          "scientific_name": "",
-          "classification": "",
-          "physical_characteristics": "",
-          "behavioral_traits": "",
-          "habitat": "",
-          "geographic_distribution": "",
-          "diet_and_feeding_habits": "",
-          "reproduction_and_lifecycle": "",
-          "conservation_status": "",
-          "interactions_with_other_species": "",
-          "adaptations_to_the_environment": "",
-          "threats_and_challenges": "",
-          "conservation_efforts_and_initiatives": ""
-      },
-      "author": "Nnaemeka Daniel John",
-      "powered_by": "google gemini-pro-vision"
-  }
-  ```
+The BioDetect API utilizes React for the frontend interface and Python FastAPI for the backend. The core detection capabilities are powered by Google Gemini Pro Vision AI, enabling accurate detection and detailed analysis of living organisms from uploaded images.
 
-### Detection Endpoint
+<a name="usage"></a>
+### Usage
 
-#### Method: 
-- **POST**
+<a name="home"></a>
+#### Home
+![home](https://github.com/dukeofhazardz/bio-detect/assets/113605239/ce0bfa11-88cc-413e-938a-5220c7dec6d4)
 
-#### URL: 
-- **/detect**
+The general landing page of the BioDetect API provides users with an overview of the API's capabilities and instructions on how to use it. Here, users can find information about the API, its usage, and the technology powering it.
 
-#### Description: 
-- Detects an organism based on the image provided in the request.
+<a name="detect"></a>
+#### Detect
+![detect](https://github.com/dukeofhazardz/bio-detect/assets/113605239/00977865-076f-4a74-b250-0548789af7b0)
 
-#### Request Body: 
-- Upload a file containing the image of the organism. Use the key `image` for the file.
+The Detect interface allows users to upload an image of an animal, insect, or plant for detection. Upon uploading an image, the API analyzes it and generates detailed information about the detected organism. The information is displayed in a carousel format, allowing users to click through each piece of information.
+![result](https://github.com/dukeofhazardz/bio-detect/assets/113605239/5f4d3af6-2901-4729-8f6c-925ac3580ac6)
 
-#### Response: 
-- Returns detailed information about the detected organism.
+<a name="about"></a>
+#### About
+![about](https://github.com/dukeofhazardz/bio-detect/assets/113605239/be2b55fb-26c1-49d2-8daf-5bc4234b7871)
 
-#### Using cURL
-``` bash
-curl -X POST -F "image=@/path/to/your/image.jpg" https://biodetect-api.onrender.com/detect
-```
+The About section provides users with additional information about the BioDetect API, including its use cases, features, and development team. Users can learn more about the application's goals, objectives, and future plans.
 
-#### Example JSON Output (if the image is that of an octopus):
-```json
-{
-    "species": "Octopus vulgaris",
-    "common_name": "Common octopus",
-    "scientific_name": "Octopus vulgaris",
-    "classification": "Phylum: Mollusca; Class: Cephalopoda; Order: Octopoda; Family: Octopodidae; Genus: Octopus; Species: Octopus vulgaris",
-    "physical_characteristics": "The common octopus has a soft, oval body with eight arms, each of which has a suction cup on the end. It has a mantle cavity that contains its gills and other organs. The octopus has a beak-like mouth and a radula, which is a rasping tongue-like structure. The octopus can change its color and texture to match its surroundings.",
-    "behavioral_traits": "The common octopus is a solitary creature that spends most of its time hiding in dens or caves. It is active at night and hunts for food by using its arms to probe the crevices of rocks and coral reefs. The octopus is a carnivore and its diet includes crabs, shrimp, fish, and mollusks. The octopus is also known to use tools, such as rocks or shells, to help it capture prey.",
-    "habitat": "The common octopus is found in temperate and tropical waters around the world. It is typically found in shallow waters, but it can also be found in deeper waters. The octopus is able to adapt to a variety of habitats, including coral reefs, rocky shores, and seagrass beds.",
-    "geographic_distribution": "The common octopus is found in temperate and tropical waters around the world. It is most commonly found in the Mediterranean Sea, the Atlantic Ocean, and the Pacific Ocean.",
-    "diet_and_feeding_habits": "The common octopus is a carnivore and its diet includes crabs, shrimp, fish, and mollusks. The octopus is also known to use tools, such as rocks or shells, to help it capture prey.",
-    "reproduction_and_lifecycle": "The common octopus reproduces sexually. The male octopus fertilizes the eggs of the female octopus. The female octopus lays her eggs in a den or cave. The eggs hatch into paralarvae, which are small, free-swimming octopuses. The paralarvae grow into adults over a period of several months.",
-    "conservation_status": "The common octopus is not currently listed as a threatened or endangered species. However, its population is declining in some areas due to habitat loss and overfishing.",
-    "interactions_with_other_species": "The common octopus is a solitary creature and does not typically interact with other species. However, it is known to prey on other octopuses, as well as crabs, shrimp, fish, and mollusks. The octopus is also known to use tools, such as rocks or shells, to help it capture prey.",
-    "adaptations_to_the_environment": "The common octopus has a number of adaptations that help it survive in its environment. These adaptations include its ability to change its color and texture to match its surroundings, its ability to use tools, and its ability to learn and remember.",
-    "threats_and_challenges": "The common octopus faces a number of threats, including habitat loss and overfishing. Habitat loss is occurring due to the destruction of coral reefs and other coastal habitats. Overfishing is occurring due to the demand for octopus meat and ink.",
-    "conservation_efforts_and_initiatives": "There are a number of conservation efforts and initiatives underway to help protect the common octopus. These efforts include the establishment of marine protected areas, the regulation of fishing, and the education of the public about the importance of the octopus."
-}
-```
+<a name="technologies"></a>
+### Technologies
 
-## Author
-- Nnaemeka Daniel John
+The BioDetect API is built using the following technologies:
 
-## Powered By
-- Google Gemini-Pro-Vision
+- **React**: A JavaScript library for building user interfaces.
+- **Python FastAPI**: A modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
+- **Google Gemini Pro Vision AI**: A powerful artificial intelligence tool for image analysis and recognition.
+
+<a name="contributing"></a>
+### Contributing
+
+Contributions to the BioDetect API are welcome! If you have any suggestions, feature requests, or bug reports, please feel free to open an issue or submit a pull request on the GitHub repository.
+
+<a name="authors"></a>
+### Authors
+
+The BioDetect API is developed and maintained by Nnaemeka Daniel John.
+
+<a name="license"></a>
+### License
+
+The BioDetect API is open-source software licensed under the MIT License. See the [LICENSE](https://github.com/example/biodetect-api/blob/main/LICENSE) file for more information.
