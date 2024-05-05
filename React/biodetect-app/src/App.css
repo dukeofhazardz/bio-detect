@@ -153,6 +153,11 @@ body {
   left: 30%;
 }
 
+.detect-info {
+  color: #484848;
+  font-size: 20px;
+}
+
 .about-section-container {
   margin-top: 10rem;
   position: relative;

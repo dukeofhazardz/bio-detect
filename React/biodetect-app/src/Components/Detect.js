@@ -53,6 +53,9 @@ const Detect = () => {
     <div className="detect-section-container" id="detect">
       <div className='detect-section-text-container'>
         <p className='primary-subheading'>Detect</p>
+        <p className='detect-info'>
+          Provide a clear and focused image of an animal, plant or insect for accurate detection results.
+        </p>
       </div>
       {/* Upload/Detect Section Content */}
       <div className="container">

@@ -29,7 +29,8 @@ from gemini.gemini import GenAI
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://*"
 ]
 
 app.add_middleware(
