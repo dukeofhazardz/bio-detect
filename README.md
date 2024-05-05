@@ -62,4 +62,4 @@ The BioDetect API is developed and maintained by Nnaemeka Daniel John.
 <a name="license"></a>
 ### License
 
-The BioDetect API is open-source software licensed under the MIT License. See the [LICENSE](https://github.com/example/biodetect-api/blob/main/LICENSE) file for more information.
+The BioDetect API is open-source software licensed under the MIT License. See the [LICENSE](https://github.com/dukeofhazardz/bio-detect/blob/main/LICENSE) file for more information.
